@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font-awesome -->
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "zdkTi4oTCZXnIDQf9",
+      });
+   })();
+</script>
+
+
+    <title>Mr.Laundry</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="Assest/logo.jpg" alt="" />
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <h1 class="Username">Username</h1>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="heroleft">
+            <h1>
+                Revitlize Your <br />
+                Cloths with Expert
+            </h1>
+            <h1 class="title">Laundry Services!</h1>
+            <p>
+                From premium dry cleaning to swift wash and fold, we deliver care and
+                convenience. Schedule a pickup and rediscover the freshness of your
+                clothes today!
+            </p>
+            <button><img class="laundry-machine" src="/Assest/laundry-machine.png" alt=""><a href="#service">Book a service today!</a></button>
+        </div>
+        <div class="heroright">
+            <img src="Assest/hero.jpg" alt="" />
+        </div>
+    </section>
+    <section class="service" id="service" >
+        <div class="service_left">
+            <h1>Our Achievements</h1>
+        </div>
+        <div class="service_right">
+            <div class="service_right_content">
+                <h3>15+</h3>
+                <p>Laundry Services</p>
+
+            </div>
+            <div class="service_right_content">
+                <h3>240+</h3>
+                <p>Happy Coustomer</p>
+
+            </div>
+            <div class="service_right_content">
+                <h3>2+ Yrs</h3>
+                <p>Expirience</p>
+
+            </div>
+        </div>
+    </section>
+    <section class="booking">
+        <div class="booking_right">
+            <div class="booking_right_title">
+                <h1>Our Services</h1>
+                <p>Click On The Add To Cart Button To Add The Services To Your Cart </p>
+                <hr>
+            </div>
+            <div class="booking_right_content">
+
+                <div class="right_name">
+                    <img src="/Assest/dry_clean.png" alt="">
+                    <p> Dry Clean
+                    <h2>&middot;</h2> <span>&#8377; 200.00 </span> </p>
+                </div>
+
+                <div class="right_button">
+
+                    <button  id="add_dry" value="01">Add Item &oplus; </button>
+
+                </div>
+            </div>
+
+            <div class="booking_right_content">
+
+                <div class="right_name">
+                    <img src="/Assest/wash.png" alt="">
+                    <p> Wash & Fold 
+                    <h2>&middot;</h2> <span>&#8377; 100.00 </span> </p>
+                </div>
+
+                <div class="right_button">
+
+                    <button id="add_dry" class="remove-item-btn" data-id="${item.id}" value="02" >Add Item &oplus; </button>
+
+                </div>
+            </div>
+
+            <div class="booking_right_content">
+
+                <div class="right_name">
+                    <img src="/Assest/iron.png" alt="">
+                    <p>Iron
+                    <h2>&middot;</h2> <span>&#8377; 30.0 </span> </p>
+                </div>
+
+                <div class="right_button">
+
+                    <button id="add_dry" value="03" >Add Item &oplus; </button>
+
+                </div>
+            </div>
+
+            <div class="booking_right_content">
+
+                <div class="right_name">
+                    <img src="/Assest/stain-remover.png" alt="">
+                    <p> Stain Removal
+                    <h2>&middot;</h2> <span>&#8377; 500.00 </span> </p>
+                </div>
+
+                <div class="right_button">
+
+                    <button id="add_dry" value="04" >Add Item &oplus; </button>
+
+                </div>
+            </div>
+
+            <div class="booking_right_content">
+
+                <div class="right_name">
+                    <img src="/Assest/leather.png" alt="">
+                    <p> Leather & Suede Cleaning
+                    <h2>&middot;</h2> <span>&#8377; 999.00 </span> </p>
+                </div>
+
+                <div class="right_button">
+
+                    <button id="add_dry"     value="05" >Add Item &oplus; </button>
+
+                </div>
+            </div>
+
+            <div class="booking_right_content">
+
+                <div class="right_name">
+                    <img src="/Assest/wedding.png" alt="">
+                    <p> Wedding Dress Cleaning
+                    <h2>&middot;</h2> <span>&#8377; 2800.00 </span></p>
+                </div>
+
+                <div class="right_button">
+
+                    <button id="add_dry"   value="06" >Add Item &oplus; </button>
+
+                </div>
+            </div>
+            <hr class="line">
+            <p id="thanks" class="right_end_line">&#9432; Add the items to the cart and Book now</p>
+        </div>
+        <div class="booking_left">
+
+            <div class="booking_left_top">
+              <div>
+                      <h3>Add Items </h3>
+                <table id="table" class="cart_table" >
+                    <tr>
+                        <th>SNo.</th>
+                        <th>Service Name</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                    
+                </table>
+              </div>
+               <div class="total" > <p>Total Amount : </p>
+                <p id="total" > 00.00</p>
+            </div>
+            </div>
+            <div class="booking_left_bottom">
+                <h4>Book Now</h4>
+                <form  onsubmit="return button()" method="post">
+                    <div class="form_name">
+                        <label for="Name">Full Name</label><br>
+                        <input type="name" id="order_name" placeholder="Jhone" required minlength="3">
+
+                    </div>    
+                
+                 <div class="email_phone">
+                       <div class="form_email">
+                        <label for="email">Email ID</label><br>
+                        <input type="email"  id="order_email" placeholder="example@gmail.com" required>
+
+                    </div>
+                    <div class="form_phone">
+                        <label for="phone">Phone Number </label><br>
+                        <input type="number" id="order_number" placeholder="1234567890" required>
+
+                    </div>
+                 </div>
+                 <button  id="order_button" value="submit" type="submit" class="book_now " >Book Now</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <section class="quality" id="about">
+         <div>
+             <img src="/Assest/washing-machine.png" alt="">
+             <h3>Premium Services</h3>
+             <p>Elevate your wardrope with our meticulous cleaning, ensuring garments look and feel as good as new</p>
+            </div>
+            <div>
+                <img src="/Assest/support.png" alt="">
+                <h3>Quick support </h3>
+                <p>We,re  committed to providing Prompt solutions to ensure your experience is smooth and worry - free </p>
+                
+            </div>
+            <div>
+            <img src="/Assest/courier.png" alt="">
+            <h3>Hassel Free Delivery</h3>
+            <p>Enjoy seamless service with our convenient pickup and delivery options, tailored to your schedule.</p>
+            
+        </div>
+        <div>
+            <img src="/Assest/bribe.png" alt="">
+            <h3>Afdordable Prices</h3>
+            <p>Experience exceptional care without breaking the bank - Our affordable prices make laundry day stress- free</p>
+
+        </div>
+
+    </section>
+    <section class="newsletter">
+        <div class="subcribe">
+            <h1>
+                Subscribe to our NewsLetter.
+            </h1>
+        </div>
+        <div class="news_form" >
+            <form action="" >
+                <div class="news_name_email">
+                    <input type="Name" required minlength="3" placeholder="Full Name">
+                    <input type="=Email" required placeholder="example@gmail.com">
+                </div>
+                <div class="news_button">
+                    <button>Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer id="contact" >
+       <div class="footer" >
+           <div>
+             <img class="footer_logo" src="/Assest/logo.jpg" alt="">
+            <h4>About Us</h4>
+            <p>You Laundry provides washing and dry cleaning service. </p>
+            
+        </div>
+        <div  class="list">
+            <ul>
+                <li><h4>Important Links</h4></li>
+                <li>About Us</li>
+                <li>Contact US</li>
+                <li>Privacy Policy</li>
+                <li>Terms of Use</li>
+                <li>Refund Policy</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <p>Laundrymail@gmail.com</p>
+            <p>+91 1234567890</p>
+        </div>
+        <div class="social">
+            <h4>Follow Us </h4>
+            <a href=""><img src="Assest/instagram (1).png" alt=""></a>
+            <a href=""><img src="Assest/facebook.png" alt=""></a>
+            <a href=""><img src="Assest/twitter.png" alt=""></a>
+            <a href=""><img src="Assest/youtube.png" alt=""></a>
+        </div>
+       </div>
+    </footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        let cart = [];
+        
+                const $cartTableBody = $('#table');
+                const $totalAmount = $('#total');
+                const $thanksMessage = $('#thanks');
+        const services = [
+            { id: '01', name: 'Dry Clean', price: 200.00 },
+            { id: '02', name: 'Wash & Fold', price: 100.00 },
+            { id: '03', name: 'Iron', price: 30.00 },
+            { id: '04', name: 'Stain Removal', price: 500.00 },
+            { id: '05', name: 'Leather & Suede Cleaning', price: 999.00 },
+            { id: '06', name: 'Wedding Dress Cleaning', price: 2800.00 }
+        ];
+
+
+        function renderCart() {
+            $cartTableBody.find('tr:gt(0)').remove();
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                $cartTableBody.append('<tr><td colspan="4" style="text-align: center; color: #888;">No items in cart</td></tr>');
+            } else {
+                $.each(cart, function(index, item) {
+                    totalPrice += item.price;
+                    const newRow = `
+                        <tr data-id="${item.id}">
+                            <td>${index + 1}</td>
+                            <td>${item.name}</td>
+                            <td>&#8377; ${item.price.toFixed(2)}</td>
+                            <td></td> </tr>
+                    `;
+                    $cartTableBody.append(newRow);
+                });
+            }
+            $totalAmount.text(totalPrice.toFixed(2));
+        }
+        
+        renderCart();
+
+        $('.booking_right_content .right_button button').on('click', function() {
+            const $button = $(this);
+            const itemId = $button.val();
+            const selectedItem = services.find(service => service.id === itemId);
+            const itemInCart = cart.find(item => item.id === itemId);
+
+
+            if (itemInCart) {
+                cart = cart.filter(item => item.id !== itemId);
+                
+                $button.css({
+                    'background-color': 'rgba(233, 233, 233, 0.80)', 
+                    'color': 'Black',
+                }).text('Add Item +');
+
+            } else if (selectedItem) {
+                cart.push(selectedItem);
+                
+                $button.css({
+                    'background-color': '#e74c3c',
+                    'color': 'white',
+                }).text('Remove Item -');
+            }
+            
+            renderCart();
+        });
+
+
+
+        $('form').on('submit', function(event) {
+            event.preventDefault();
+
+            if (cart.length === 0) {
+                alert("Please add at least one item to your cart before booking.");
+                return;
+            }
+
+            // Create a string of services for the email template
+            const serviceListString = cart.map(item => `${item.name} (₹${item.price.toFixed(2)})`).join(', ');
+
+            const params = {
+                name: $("#order_name").val(),
+                email: $("#order_email").val(),
+                phone: $("#order_number").val(),
+                services_list: serviceListString, // This is the key change
+                total_amount: `₹${$("#total").text()}` // This is the other key change
+            };
+            
+            emailjs.send("service_fn5dywp", "template_fzsb82o", params)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert("Order submitted successfully!");
+                    
+                    // Display success message and clear the cart and form
+                    $thanksMessage.text("Thank you for booking the service! We will get back to you soon!");
+                    $thanksMessage.css('color', 'Black');
+                    
+                    cart = [];
+                    renderCart();
+
+                    $('.booking_right_content .right_button button').css({
+                        'background-color': 'rgba(233, 233, 233, 0.80)',
+                        'color': 'Black',
+                    }).html('Add Item &oplus;');
+
+                    // Reset form fields
+                    $('form')[0].reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert("Order failed to send. Please try again later.");
+                });
+        });
+    });
+
+</script>
+
+</script>
+</html>
