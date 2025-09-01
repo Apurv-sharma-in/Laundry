@@ -1,0 +1,402 @@
+*{
+    padding: 0;
+    margin: 0;
+box-sizing: border-box;
+}
+
+
+nav{
+    display: flex;  
+    justify-content: space-around;
+    align-items: center;
+
+}
+nav >ul> li>a{
+    text-decoration: none;
+    color: rgb(41, 41, 41);
+}
+nav > img{
+    width: 6em;
+}
+nav >ul{
+    display: flex;
+    gap: 2em;
+}
+ 
+nav >ul > li {
+    list-style: none;
+    font-size: 1.2em;
+    position: relative; /* The container for the pseudo-element */
+    padding-bottom: 5px; /* Adds space for the underline */
+}
+
+/* This is the line that will animate */
+nav > ul > li::after {
+    content: ''; 
+    position: absolute;
+    width: 100%; /* It has a full width, but is not visible yet */
+    height: 2px;
+    bottom: 0; 
+    left: 0;
+    background-color: rgb(0, 225, 255);
+    
+    /* --- The Key Animation Properties --- */
+    transform: scaleX(0); /* Starts invisible */
+    transform-origin: center; /* Animation starts from the center */
+    
+    /* The transition is defined here, with a delay */
+    transition: transform 0.1s ease-in-out 0.1s; /* DURATION + DELAY */
+}
+
+/* On hover, we make the line appear */
+nav >ul > li:hover::after {
+    transform: scaleX(1); /* Expands to full width */
+}
+
+.Username{
+    padding: 10px 18px 10px 18px ;
+    font-size: 1em;
+    font-weight: lighter;
+    color: rgb(0, 255, 255);
+    background-color: rgba(240, 255, 255, 0.76);
+    border-radius: 5px;
+}
+.hero{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 1.5em;
+    
+}
+.heroleft{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.heroleft >h1 {
+    font-size: 2.5em;
+}
+.heroleft > .title{
+    color: #00b4f7;
+}
+.heroleft > button{
+    font-size: 1.2em;
+    width: 15em;
+    height: 3em;
+    border-radius: 15px ;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    background-color: #00b4f7;
+    color: white;
+}
+.heroleft>button>a{
+    color: white;
+
+}
+.laundry-machine{
+    width: 2em;
+}
+.heroright>img{
+    width: 80%;
+    
+}
+.service{
+    margin-top: 1.5em;
+    height: 16.3lvh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #00b4f7; 
+}
+.service_left{
+    font-size: 2.1em;
+}
+.service_right{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap :5em;
+}
+.service_right_content> h3{
+    font-size: 2em;
+}
+.service_right_content> p{
+    font-size: 1em;
+    margin-top: -8px;   
+}
+.booking{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2em;
+    background-color: aliceblue;
+}
+.booking_right{
+    width: 50%;
+    height: 80%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 2em;
+}
+.booking_right_title> hr{
+    margin-top: 1.2em;
+}
+.booking_left{
+    width: 24%;
+    height: 80%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.booking_left_top{
+    width: 100%;
+    height: 50%;
+    border-radius: 20px;
+    background-color: white;
+    
+    
+}
+.booking_left_bottom {
+    width: 100%;
+    height: 45%;
+    border-radius: 20px;
+    background-color: white;
+    
+}
+
+.booking_right_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+    cursor: pointer ;
+}
+.right_name>span{
+    color: #00b4f7;
+    cursor: pointer ;
+}
+.right_name{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+.right_name> img {
+    width: 1.8em;
+}
+button{
+    cursor: pointer;
+}
+.right_button{
+    width: 25%;
+    height: 2em;    
+}
+.right_button> button, .right_button> title{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border:0;
+    background-color: rgba(233, 233, 233, 0.801);
+    color: black;
+    font-size: 1em;
+}
+.line{
+    margin-top: 0.5em;
+}
+.right_end_line{
+    color:#00b4f7;
+    padding: 0.5em;
+}
+.booking_left_top{
+    padding: 2px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.total{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-right: 1em;
+}
+.total> p{
+    font-weight: bolder;
+    float:left;
+    margin-left: 1.2em;
+    
+}
+.cart_table{
+
+    width: 100%;
+}
+.booking_left_bottom{
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.booking_left_bottom> h4{
+    margin-left: 0.5em;
+}
+.booking_left_bottom> form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.2em;
+    margin: 0 auto;
+    font-size: 0.9em;
+
+}
+.form_name> input {
+    width: 90%;
+    height: 2em;
+    border-radius: 1em;
+    border: 1px solid rgb(155, 184, 184) ;
+    padding: 1.2em;
+
+}
+.email_phone{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form_email> input , .form_phone > input{
+    width: 80%;
+    height: 3em;
+    border-radius: 1em;
+    border: 1px solid rgb(155, 184, 184) ;
+    padding: 1.2em;
+
+}
+.book_now{
+    margin: 0 auto;
+    width: 99%;
+    height: 3em;
+    background-color:#00b4f7;
+    border: 0 ;
+    border-radius: 0.5em;
+
+}
+.quality{
+    width: 90%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto ;
+    text-align: center;
+}
+.quality> div> img{
+    width: 5em;
+}
+
+.quality> div{
+    width: 30%;
+    font-size: 0.9em;
+}
+.newsletter{
+    width: 100%;
+    display: flex;
+    height: 30vh;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #00b4f7;
+    color: white;
+}
+.subcribe{
+    width: 40%;
+}
+.subcribe> h1{
+    font-size: 3em;
+    line-height: 1;
+}
+.news_form{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 1em;
+}
+
+.news_name_email> input::placeholder{
+    color: white;
+    font-size: 1.2em;
+}
+
+.news_name_email> input{
+    
+    font-size: 1em;
+    height: 3em;
+    background-color: #3bcbffe0;
+    border-radius: 0.3em;
+    border: 1px solid rgb(155, 184, 184) ;
+    padding: 1.2em;
+}
+.news_button> button{
+    box-sizing: border-box;
+    font-size: 1.6em;
+    margin-top: 0.2em;
+    width: 50%;
+    height: 9vh;
+    border-radius: 0.3em;
+    border: 1px solid rgb(155, 184, 184) ;
+    color: #00b4f7;
+}
+footer> div{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    margin: 0 auto ;
+    padding: 0.5em;
+}   
+.footer{
+    width: 80%;
+}
+.footer_logo{
+    width: 4em;
+}
+.footer> div>ul{
+
+    list-style: none;
+}
+
+.footer> div{
+    width: 40%;
+    margin: 0 auto;
+    padding: 1em;
+    font-size: 1em;
+
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+
+}
+.social> a>img{
+    width: 1.5em;
+}
+.cart_table{
+    width: 100%;
+    font-size: 14px;
+}

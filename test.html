@@ -1,0 +1,100 @@
+
+    $(document).ready(function() {
+        // Array of objects representing the laundry services
+        const services = [
+            { id: '01', name: 'Dry Clean', price: 200.00 },
+            { id: '02', name: 'Wash & Fold', price: 100.00 },
+            { id: '03', name: 'Iron', price: 30.00 },
+            { id: '04', name: 'Stain Removal', price: 500.00 },
+            { id: '05', name: 'Leather & Suede Cleaning', price: 999.00 },
+            { id: '06', name: 'Wedding Dress Cleaning', price: 2800.00 }
+        ];
+
+        let cart = [];
+
+        const $cartTableBody = $('#table');
+        const $totalAmount = $('#total');
+        const $thanksMessage = $('#thanks');
+
+        // Function to render the cart in the table
+        function renderCart() {
+            $cartTableBody.find('tr:gt(0)').remove();
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                // Display a message when the cart is empty
+                $cartTableBody.append('<tr><td colspan="4" style="text-align: center; color: #888;">No items in cart</td></tr>');
+            } else {
+                $.each(cart, function(index, item) {
+                    totalPrice += item.price;
+                    const newRow = `
+                        <tr data-id="${item.id}">
+                            <td>${index + 1}</td>
+                            <td>${item.name}</td>
+                            <td>&#8377; ${item.price.toFixed(2)}</td>
+                            <td></td> </tr>
+                    `;
+                    $cartTableBody.append(newRow);
+                });
+            }
+            $totalAmount.text(totalPrice.toFixed(2));
+        }
+        
+        // Initial render when the page loads
+        renderCart();
+
+        // Event listener for all service buttons
+        $('.booking_right_content .right_button button').on('click', function() {
+            const $button = $(this);
+            const itemId = $button.val();
+            const selectedItem = services.find(service => service.id === itemId);
+
+            // Check if the item is already in the cart
+            const itemInCart = cart.find(item => item.id === itemId);
+
+            if (itemInCart) {
+                // If item is in cart, remove it
+                cart = cart.filter(item => item.id !== itemId);
+                
+                // Change button back to "Add Item"
+                $button.css({
+                    'background-color': 'rgba(233, 233, 233, 0.80)', // Or your original button color
+                    'color': 'Black',
+                }).text('Add Item +');
+
+            } else if (selectedItem) {
+                // If item is not in cart, add it
+                cart.push(selectedItem);
+                
+                // Change button to "Remove Item"
+                $button.css({
+                    'background-color': '#e74c3c', // Red color
+                    'color': 'white',
+                }).text('Remove Item -');
+            }
+            
+            renderCart(); // Re-render the cart table
+        });
+
+        // Handle the form submission
+        $('form').on('submit', function(event) {
+            event.preventDefault();
+
+            if (cart.length === 0) {
+                alert("Please add at least one item to your cart before booking.");
+                return;
+            }
+
+            $thanksMessage.text("Thank you for booking the service! We will get back to you soon!");
+            $thanksMessage.css('color', 'Black');
+
+            cart = [];
+            renderCart();
+
+            // Reset all service buttons to their original state
+            $('.booking_right_content .right_button button').css({
+                'background-color': 'rgba(233, 233, 233, 0.80)',
+                'color': 'Black',
+            }).text('Add Item +');
+        });
+    });
